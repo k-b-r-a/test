@@ -17,8 +17,8 @@ import jakarta.persistence.Table;
  * @author kbra
  */
 @Entity
-@Table(name="Tb_Emails")
-public class Nombre {
+@Table(name="Tb_Texts")
+public class Inicio {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="Id")
@@ -26,12 +26,6 @@ public class Nombre {
     
     @Column(name="Nombre")
     private String Nombre;
-    
-    @Column(name="Apellido")
-    private String Apellido;
-    
-    @Column(name="Email")
-    private String Email;
     
     @Column(name="Message")
     private String Message;
@@ -50,22 +44,6 @@ public class Nombre {
 
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
-    }
-    
-    public String getApellido() {
-        return Apellido;
-    }
-
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
     }
     
     public String getMessage() {
