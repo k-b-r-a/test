@@ -4,8 +4,8 @@
  */
 package com.k_b_r_a.portfolio.Controller;
 
-import com.k_b_r_a.portfolio.Model.Inicio;
-import com.k_b_r_a.portfolio.Service.InicioService;
+import com.k_b_r_a.portfolio.Model.Img;
+import com.k_b_r_a.portfolio.Service.ImgService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,14 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins="*")
 @RequestMapping("/api")
 
-public class InicioController {
+public class ImgController {
     @Autowired
-    private InicioService inicioService;
+    private ImgService imgService;
     
     //cargar todos los textos
-    @GetMapping("/texts")
-    public List<Inicio> listar()
+    @GetMapping("/imgs")
+    public List<Img> listar()
     {
-        return inicioService.findAll();
+        return imgService.findAll();
     }
 }
