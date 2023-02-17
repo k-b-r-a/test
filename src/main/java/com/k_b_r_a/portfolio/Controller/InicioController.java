@@ -10,6 +10,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,5 +33,13 @@ public class InicioController {
     public List<Inicio> listar()
     {
         return inicioService.findAll();
+    }
+    @PutMapping("/texts/{id}")
+    public Inicio modificar(@RequestBody Inicio inicio,@PathVariable Integer id)
+    {
+        Inicio inicioActual= inicioService.findById(id);
+        inicioActual.setNombre(inicio.getNombre());
+        inicioActual.setMessage(inicio.getMessage());
+        return inicioService.save(inicioActual);
     }
 }
